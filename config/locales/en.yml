@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  profile: "Profile"
+  home: "Home"
+  framgia: "Framgia Libary"
+  app_name: "Framgia Libary"
+  books: "Books"
+  categories: "Categories"
+  requests: "Requests"
+  form_contains: "The form contains"
+  error: "errors"
+  sign_up: "Sign up"
+  login: "Login"
