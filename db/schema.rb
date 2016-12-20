@@ -13,11 +13,10 @@
 ActiveRecord::Schema.define(version: 20161220042110) do
 
   create_table "activities", force: :cascade do |t|
-    t.string   "activatable_type"
-    t.integer  "activatable_id"
+    t.integer  "action_type"
     t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -128,6 +127,7 @@ ActiveRecord::Schema.define(version: 20161220042110) do
     t.string   "name"
     t.string   "password_digest"
     t.boolean  "is_admin"
+    t.string   "remember_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
