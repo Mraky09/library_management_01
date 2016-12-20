@@ -14,8 +14,20 @@
         <li><a href="#"><%= t "profile" %></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= t "sign_up" %></a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> <%= "login" %></a></li>
+        <% if logged_in? %>
+          <li>
+            <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-out"></span> <%= t "logout" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= t "sign_up" %></a></li>
+          <li>
+            <%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span> <%= t "login" %>
+            <% end %>
+          </li>
+        <% end %>
       </ul>
     </nav>
   </div>
