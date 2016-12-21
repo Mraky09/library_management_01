@@ -38,6 +38,7 @@ en:
   category_name: "Category Name"
   description: "Description"
   index: "Index"
+  search: "Search"
   sessions:
     new:
       remember_me: "Remember me on this computer?"
