@@ -34,6 +34,10 @@ en:
   login: "Login"
   confirmation: "Password confirmation"
   welcome_message: "Welcome to Framgia Library"
+  categories_list: "List categories"
+  category_name: "Category Name"
+  description: "Description"
+  index: "Index"
   sessions:
     new:
       remember_me: "Remember me on this computer?"

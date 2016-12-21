@@ -1,0 +1,18 @@
+<% provide :title, t("categories_list") %>
+<h1><%= t "categories_list" %></h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "category_name" %></th>
+        <th><%= t "description" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <%= render @categories %>
+    </tbody>
+  </table>
+  <%= will_paginate @categories %>
+</div>
