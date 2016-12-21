@@ -17,6 +17,7 @@ gem "jbuilder", "~> 2.5"
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "will_paginate", "~> 3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
+gem "config"
 
 group :development, :test do
   gem "byebug", platform: :mri
