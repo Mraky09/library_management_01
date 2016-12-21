@@ -32,3 +32,8 @@ en:
   error: "errors"
   sign_up: "Sign up"
   login: "Login"
+  sessions:
+    new:
+      remember_me: "Remember me on this computer?"
+    create:
+      invalid_login: "Invalid password/user combination"
