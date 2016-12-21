@@ -32,8 +32,13 @@ en:
   error: "errors"
   sign_up: "Sign up"
   login: "Login"
+  confirmation: "Password confirmation"
+  welcome_message: "Welcome to Framgia Library"
   sessions:
     new:
       remember_me: "Remember me on this computer?"
     create:
       invalid_login: "Invalid password/user combination"
+  users:
+    new:
+      create_account: "Create account"

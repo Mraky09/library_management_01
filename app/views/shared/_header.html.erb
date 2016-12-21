@@ -16,12 +16,15 @@
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
           <li>
-            <%= link_to login_path do %>
+            <%= link_to logout_path, method: :delete do %>
               <span class="glyphicon glyphicon-log-out"></span> <%= t "logout" %>
             <% end %>
           </li>
         <% else %>
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%= t "sign_up" %></a></li>
+          <li>
+            <%= link_to signup_path do %>
+              <span class="glyphicon glyphicon-log-out"></span> <%= t "sign_up" %>
+            <% end %>
           <li>
             <%= link_to login_path do %>
               <span class="glyphicon glyphicon-log-in"></span> <%= t "login" %>
