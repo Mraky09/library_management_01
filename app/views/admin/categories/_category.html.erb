@@ -3,7 +3,7 @@
     Settings.item_per_page %></td>
   <td><%= link_to category.name, edit_admin_category_path(category) %></td>
   <td><%= category.description %></td>
-  <td><%= category.books.length %></td>
+  <td><%= category.books.size %></td>
   <td>
     <%= link_to edit_admin_category_path category do %>
       <%= fa_icon "pencil" %>

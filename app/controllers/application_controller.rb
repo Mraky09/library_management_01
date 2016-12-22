@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
-
+  def safe_params
+    params.except(:host, :port, :protocol).permit!
+  end
+  helper_method :safe_params
   private
   def verify_login
     unless logged_in?

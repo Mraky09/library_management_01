@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+title = wb.styles.add_style bg_color: "71F79F"
+wb.add_worksheet(name: "Categories") do |sheet|
+  sheet.add_row [t("index"), t("category_name"), t("description"), t("quantity")],
+    style: title
+  @categories.each do |category|
+    sheet.add_row [category.id, category.name, category.description,
+      category.books.length]
+  end
+  sheet.add_row [nil, nil, t("total"), "=SUM(D1:D#{@categories.length})"]
+end

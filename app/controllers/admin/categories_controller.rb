@@ -6,6 +6,14 @@ class Admin::CategoriesController < ApplicationController
     @categories = Category.search(params[:search]).includes(:books).
       order(created_at: :DESC).paginate page: params[:page],
       per_page: Settings.item_per_page
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        @categories = Category.search(params[:search]).includes(:books).
+          order(created_at: :DESC)
+        render xlsx: "excel_template", filename: generate_file_name
+      }
+    end
   end
 
   def new
@@ -37,7 +45,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     if @category.books.any?
-      flash[:danger] = t "delete_unsuccess"
+      flash[:danger] = t "delete_notice"
     else
       if @category.destroy
         flash[:success] = t "delete_success"
@@ -56,5 +64,10 @@ class Admin::CategoriesController < ApplicationController
   def load_category
     @category = Category.find_by id: params[:id]
     render_404 unless @category
+  end
+
+  def generate_file_name
+    file_name = "categories_report_"
+    file_name + Time.now.strftime('%Y_%m_%d_%H-%M-%S')
   end
 end

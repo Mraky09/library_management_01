@@ -39,8 +39,13 @@ en:
   category_name: "Category Name"
   description: "Description"
   index: "Index"
+  total: "Total books"
   search: "Search"
   delete_success: "Delete successfully!"
+  delete_notice: "This category are using in another operation so you can't delete
+    this"
+  delete_unsucess: "Delete unsuccess because system fail, please contact with
+    your IT Manager"
   delete:
     confirm: "Are you sure you want to delete this item"
   logout: "Logout"
