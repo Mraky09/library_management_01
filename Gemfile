@@ -18,6 +18,7 @@ gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "will_paginate", "~> 3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platform: :mri

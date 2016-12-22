@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def verify_admin
     redirect_to root_url unless current_user.is_admin?
   end
+
+  def render_404
+    render file: "public/404", layout: false, status: :not_found
+  end
 end

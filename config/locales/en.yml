@@ -39,6 +39,20 @@ en:
   description: "Description"
   index: "Index"
   search: "Search"
+  logout: "Logout"
+  shared:
+    error_messages:
+      contain: "The form contains"
+      error: "error"
+  admin:
+    categories:
+      form:
+        save_changes: "Update category"
+      edit:
+      update:
+        edit_category: "Update category successfully"
+        edit_failed: "Update failed"
+
   sessions:
     new:
       remember_me: "Remember me on this computer?"
