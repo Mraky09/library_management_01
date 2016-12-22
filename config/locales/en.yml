@@ -30,7 +30,7 @@ en:
   requests: "Requests"
   form_contains: "The form contains"
   error: "errors"
-  quantity: "Quantity"
+  quantity: "Book quantity"
   sign_up: "Sign up"
   login: "Login"
   confirmation: "Password confirmation"
@@ -39,8 +39,15 @@ en:
   category_name: "Category Name"
   description: "Description"
   index: "Index"
+  excel: "Export excel file"
+  total: "Total books"
+  categories_file_name: "categories_report_"
   search: "Search"
   delete_success: "Delete successfully!"
+  delete_notice: "This category are using in another operation so you can't delete
+    this"
+  delete_unsucess: "Delete unsuccess because system fail, please contact with
+    your IT Manager"
   delete:
     confirm: "Are you sure you want to delete this item"
   logout: "Logout"

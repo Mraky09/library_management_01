@@ -7,4 +7,8 @@ module ApplicationHelper
   def index_for counter, page, per_page
     (page - 1) * per_page + counter + 1
   end
+
+  def generate_file_name file_name
+    file_name + Time.now.strftime(Settings.format.date_time_format) + ".xlsx"
+  end
 end
