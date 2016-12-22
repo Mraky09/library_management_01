@@ -30,6 +30,7 @@ en:
   requests: "Requests"
   form_contains: "The form contains"
   error: "errors"
+  quantity: "Quantity"
   sign_up: "Sign up"
   login: "Login"
   confirmation: "Password confirmation"
@@ -39,12 +40,19 @@ en:
   description: "Description"
   index: "Index"
   search: "Search"
+  delete_success: "Delete successfully!"
+  delete:
+    confirm: "Are you sure you want to delete this item"
   logout: "Logout"
+  create_category: "Create category"
+  admin:
+    categories:
+      form:
+        create_category: "Create category"
   shared:
     error_messages:
       contain: "The form contains"
       error: "error"
-  admin:
     categories:
       form:
         save_changes: "Update category"

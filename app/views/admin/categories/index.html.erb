@@ -3,10 +3,12 @@
 <%= form_tag admin_categories_path, method: :get do %>
   <%= text_field_tag :search, params[:search], placeholder: t("search"),
     class: "form-control search-field" %>
-  <div class="input-group-btn search-btn">
-    <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
-  </div>
+   <div class="input-group-btn search-btn">
+      <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
+    </div>
 <% end %>
+    <%= button_to t("create_category"), new_admin_category_path, method: :get,
+      class: "btn btn-success" %>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -14,6 +16,7 @@
         <th><%= t "index" %></th>
         <th><%= t "category_name" %></th>
         <th><%= t "description" %></th>
+        <th><%= t "quantity" %>
         <th></th>
       </tr>
     </thead>
