@@ -1,11 +1,21 @@
 class Admin::CategoriesController < ApplicationController
+  include ApplicationHelper
   before_action :verify_login, :verify_admin
   before_action :load_category, except: [:create, :index, :new]
 
   def index
-    @categories = Category.search(params[:search]).includes(:books).
-      order(created_at: :DESC).paginate page: params[:page],
-      per_page: Settings.item_per_page
+    @categories_all = Category.search(params[:search])
+                        .includes(:books)
+                        .order created_at: :DESC
+    respond_to do |format|
+      format.html {
+        @categories = @categories_all
+                        .paginate page: params[:page]
+                        ,per_page: Settings.item_per_page
+      }
+      format.xlsx {send_data @categories_all.to_xls,
+        filename: generate_file_name(t("categories_file_name"))}
+    end
   end
 
   def new
@@ -37,7 +47,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     if @category.books.any?
-      flash[:danger] = t "delete_unsuccess"
+      flash[:danger] = t "delete_notice"
     else
       if @category.destroy
         flash[:success] = t "delete_success"
@@ -57,4 +67,5 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.find_by id: params[:id]
     render_404 unless @category
   end
+
 end
