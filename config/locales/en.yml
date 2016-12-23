@@ -21,6 +21,7 @@
 
 en:
   hello: "Hello world"
+  add_author: "Add author"
   profile: "Profile"
   home: "Home"
   framgia: "Framgia Libary"
@@ -33,10 +34,12 @@ en:
   quantity: "Book quantity"
   sign_up: "Sign up"
   login: "Login"
+  edit_author: "Editing author"
   confirmation: "Password confirmation"
   welcome_message: "Welcome to Framgia Library"
   categories_list: "List categories"
   category_name: "Category Name"
+  authors_list: "List author"
   description: "Description"
   index: "Index"
   excel: "Export excel file"
@@ -56,6 +59,9 @@ en:
     categories:
       form:
         create_category: "Create category"
+    authors:
+      update:
+        edit_author: "Edit author successfully!"
   shared:
     error_messages:
       contain: "The form contains"

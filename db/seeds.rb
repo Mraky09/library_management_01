@@ -8,3 +8,9 @@ User.create!(name: "Tuan Anh Tran Nguyen",
   description = Faker::Lorem.sentence(3, true, 4)
   Category.create!(name: name, description: description)
 end
+
+99.times do |n|
+  name = Faker::Lorem.word
+  description = Faker::Lorem.sentence(3, true, 4)
+  Author.create!(name: name, description: description)
+end

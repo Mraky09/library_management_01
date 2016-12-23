@@ -10,8 +10,8 @@ class Admin::CategoriesController < ApplicationController
     respond_to do |format|
       format.html {
         @categories = @categories_all
-                        .paginate page: params[:page]
-                        ,per_page: Settings.item_per_page
+                        .paginate page: params[:page],
+                        per_page: Settings.item_per_page
       }
       format.xlsx {send_data @categories_all.to_xls,
         filename: generate_file_name(t("categories_file_name"))}
