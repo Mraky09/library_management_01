@@ -24,8 +24,13 @@ en:
   add_author: "Add author"
   profile: "Profile"
   home: "Home"
+  add_publisher: "Add publisher"
   framgia: "Framgia Libary"
   app_name: "Framgia Libary"
+  publisher_name: "Publisher name"
+  address: "Address"
+  email: "Email"
+  phone_number: "Phone number"
   books: "Books"
   categories: "Categories"
   requests: "Requests"
@@ -40,11 +45,15 @@ en:
   categories_list: "List categories"
   category_name: "Category Name"
   authors_list: "List author"
+  publisher_list: "List publisher"
   description: "Description"
   index: "Index"
   excel: "Export excel file"
   total: "Total books"
   categories_file_name: "categories_report_"
+  authors_file_name: "authors_report_"
+  author_name: "Author name"
+  publishers_file_name: "publishers_report_"
   search: "Search"
   delete_success: "Delete successfully!"
   delete_notice: "This category are using in another operation so you can't delete
@@ -59,6 +68,9 @@ en:
     categories:
       form:
         create_category: "Create category"
+    publishers:
+      update:
+        edit_publisher: "Edit publisher successfully!"
     authors:
       update:
         edit_author: "Edit author successfully!"

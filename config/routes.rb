@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories
     resources :authors
+    resources :publishers
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

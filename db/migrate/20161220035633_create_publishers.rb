@@ -4,7 +4,7 @@ class CreatePublishers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :address
       t.string :email
-      t.string :phonenumber
+      t.string :phone_number
       t.text :description
 
       t.timestamps

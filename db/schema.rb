@@ -76,10 +76,10 @@ ActiveRecord::Schema.define(version: 20161220042110) do
     t.string   "name"
     t.string   "address"
     t.string   "email"
-    t.string   "phonenumber"
+    t.string   "phone_number"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "ratings", force: :cascade do |t|
