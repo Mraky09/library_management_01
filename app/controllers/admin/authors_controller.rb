@@ -1,11 +1,21 @@
 class Admin::AuthorsController < ApplicationController
+  include ApplicationHelper
   before_action :verify_login, :verify_admin
   before_action :load_author, except: [:create, :index, :new]
 
   def index
-    @authors = Author.search(params[:search]).includes(:books)
-                .order(created_at: :DESC).paginate page: params[:page],
-                per_page: Settings.item_per_page
+    @authors_all = Author.search(params[:search])
+                     .includes(:books)
+                     .order created_at: :DESC
+    respond_to do |format|
+      format.html {
+        @authors = @authors_all
+                     .paginate page: params[:page],
+                     per_page: Settings.item_per_page
+      }
+      format.xlsx {send_data @authors_all.to_xls,
+        filename: generate_file_name(t("authors_file_name"))}
+    end
   end
 
   def new

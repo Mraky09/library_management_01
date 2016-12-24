@@ -7,8 +7,10 @@
     <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
-    <%= button_to t("add_author"), new_admin_author_path, method: :get,
-      class: "btn btn-success" %>
+<%= button_to t("add_author"), new_admin_author_path, method: :get,
+  class: "btn btn-success" %>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") %>
 <div class="table-responsive">
   <table class="table">
     <thead>

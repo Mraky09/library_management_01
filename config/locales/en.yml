@@ -45,6 +45,8 @@ en:
   excel: "Export excel file"
   total: "Total books"
   categories_file_name: "categories_report_"
+  authors_file_name: "authors_report_"
+  author_name: "Author name"
   search: "Search"
   delete_success: "Delete successfully!"
   delete_notice: "This category are using in another operation so you can't delete
