@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :authors
     resources :publishers
+    resources :books
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

@@ -9,11 +9,11 @@
 #   Category.create!(name: name, description: description)
 # end
 
-# 99.times do |n|
-#   name = Faker::Name.name_with_middle
-#   description = Faker::Lorem.sentence(3, true, 4)
-#   Author.create!(name: name, description: description)
-# end
+# # 99.times do |n|
+# #   name = Faker::Name.name_with_middle
+# #   description = Faker::Lorem.sentence(3, true, 4)
+# #   Author.create!(name: name, description: description)
+# # end
 
 99.times do |n|
   publiser_name = Faker::Company.name
