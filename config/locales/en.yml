@@ -24,6 +24,7 @@ en:
   number_specifications_errors: "A book must containt at least 1  no more than
     4 specifications."
   add_author: "Add author"
+  choose: "Choose"
   profile: "Profile"
   home: "Home"
   add_publisher: "Add publisher"
@@ -46,14 +47,17 @@ en:
   confirmation: "Password confirmation"
   welcome_message: "Welcome to Framgia Library"
   categories_list: "List categories"
-  category_name: "Category Name"
+  book_list: "List books"
+  category_name: "Category name"
   authors_list: "List author"
+  book_title: "Book title"
   publisher_list: "List publisher"
   description: "Description"
   index: "Index"
   excel: "Export excel file"
   total: "Total books"
   categories_file_name: "categories_report_"
+  book_file_name: "books_report_"
   authors_file_name: "authors_report_"
   author_name: "Author name"
   publishers_file_name: "publishers_report_"
@@ -78,6 +82,8 @@ en:
       update:
         edit_author: "Edit author successfully!"
     books:
+      destroy:
+        delete_book_borrowed: "This book are lending by someone, can't delete this"
       form:
         add_book: "Add book"
       create:

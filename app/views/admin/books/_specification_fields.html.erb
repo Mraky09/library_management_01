@@ -10,7 +10,8 @@
       <%= f.text_field :feature_value, class: "form-control", required: true %>
     </div>
     <div class="col-sm-2">
-      <%= link_to "Remove", "#", class: "remove_fields" %>
+      <%= f.check_box :_destroy%>
+      <%= t "remove" %>
     </div>
   </div>
 </fieldset>

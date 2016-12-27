@@ -13,6 +13,27 @@ class Book < ApplicationRecord
     reject_if: proc {|attributes| attributes[:feature_type].blank?},
     allow_destroy: true
 
+  scope :search, -> (condition) {where("title LIKE :search", search: "%#{condition}%")}
+  scope :in_category,->category_id{where "category_id = ?",
+    category_id if category_id.present?}
+
+  enum status: [:waiting, :borrowed]
+
+  def self.to_xls
+    csv_data = CSV.generate do |csv|
+      csv << [I18n.t("index"), I18n.t("book_title"), I18n.t("category_name"),
+        I18n.t("author_name"), I18n.t("publisher_name")]
+      all.each do |book|
+        csv << [book.id, book.title, book.category.name, book.author.name,
+          book.publisher.name]
+      end
+    end
+  end
+
+  def is_borrowed?
+    self.borrowed?
+  end
+
   private
   def validate_number_specifications
     if self.specifications.size < Settings.specifications.minimum_item ||

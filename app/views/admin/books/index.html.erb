@@ -1,0 +1,47 @@
+<% provide :title, t("book_list") %>
+<h1><%= t "book_list" %></h1>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_tag admin_books_path, method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: t("search"),
+        class: "form-control search-field" %>
+       <div class="input-group-btn search-btn">
+          <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
+        </div>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <%= form_tag admin_books_path, method: :get do %>
+      <%= select_tag :category_id,
+        options_for_select(@categories.map{|c| [c.name, c.id]},
+        selected: params[:category_id]), class: "form-control",
+        include_blank: true %>
+      <%= submit_tag t("choose"), class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
+
+<%= button_to t("add_book"), new_admin_book_path, method: :get,
+  class: "btn btn-success" %>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "index" %></th>
+        <th><%= t "book_title" %></th>
+        <th><%= t "category" %></th>
+        <th><%= t "author_name" %></th>
+        <th><%= t "publisher_name" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @books %>
+    </tbody>
+  </table>
+  </div>
+
+<%= will_paginate %>

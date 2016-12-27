@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.references :author, index: true, foreign_key: true
       t.references :category, index: true, foreign_key: true
       t.references :publisher, index: true, foreign_key: true
-      t.boolean :status
+      t.integer :status, default: 0
 
       t.timestamps
     end

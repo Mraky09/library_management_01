@@ -25,7 +25,7 @@
     <%= render "specification_fields", f: builder %>
   <% end %>
   <br>
-  <%= link_to_add_fields "add", f, :specifications %>
+  <%= link_to_add_fields t("add_answer"), f, :specifications %>
   <br>
   <%= f.submit t(".add_book"), class: "btn btn-success" %>
 <% end %>
