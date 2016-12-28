@@ -31,14 +31,12 @@ ActiveRecord::Schema.define(version: 20161225020401) do
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.date     "published_date"
-    t.integer  "page_number"
     t.integer  "author_id"
     t.integer  "category_id"
     t.integer  "publisher_id"
-    t.integer  "status",         default: 0
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "status",       default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
@@ -104,9 +102,9 @@ ActiveRecord::Schema.define(version: 20161225020401) do
     t.integer  "book_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["book_id"], name: "index_requests_on_book_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end

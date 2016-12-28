@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
   resources :books
+  resources :requests
   resources :categories
   root "static_pages#home"
   namespace :admin do

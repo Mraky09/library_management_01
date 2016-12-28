@@ -5,3 +5,5 @@ format:
 specifications:
   minimum_item: 1
   maximum_item: 4
+user:
+  item_per_page: 9

@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
   number_specifications_errors: "A book must containt at least 1  no more than
     4 specifications."
+  send_request: "Send request"
   add_author: "Add author"
   choose: "Choose"
   profile: "Profile"
@@ -40,6 +41,7 @@ en:
   requests: "Requests"
   form_contains: "The form contains"
   error: "errors"
+  book_are_borrowed: "Book are borrowed by "
   quantity: "Book quantity"
   sign_up: "Sign up"
   login: "Login"
@@ -71,6 +73,11 @@ en:
     confirm: "Are you sure you want to delete this item"
   logout: "Logout"
   create_category: "Create category"
+  requests:
+    new:
+      request: "Request"
+    create:
+      request_successfully: "Request sended!"
   admin:
     categories:
       form:

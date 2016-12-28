@@ -1,7 +1,7 @@
 <div class="col-md-3" id="leftCol">
   <ul class="nav nav-stacked" id="sidebar">
-    <li><a href="#"><%= t "books" %></a></li>
-    <li><a href="#"><%= t "requests" %></a></li>
+    <li><%= link_to t("book"), books_path %></li>
+    <li><%= link_to t("request"), requests_path %></li>
     <li><%= link_to t("categories"), categories_path %></li>
   </ul>
 </div>
