@@ -26,6 +26,7 @@ en:
   send_request: "Send request"
   add_author: "Add author"
   choose: "Choose"
+  request_list: "List Request"
   profile: "Profile"
   home: "Home"
   add_publisher: "Add publisher"
@@ -73,6 +74,9 @@ en:
     confirm: "Are you sure you want to delete this item"
   logout: "Logout"
   create_category: "Create category"
+  time:
+    formats:
+      request_date: "%Y-%m-%d %H-%M"
   requests:
     new:
       request: "Request"

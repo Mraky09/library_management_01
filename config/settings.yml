@@ -1,5 +1,6 @@
 item_per_page: 15
 format:
+  request_date_time_format: "%Y-%m-%d %H-%M"
   date_time_format: "%Y_%m_%d_%H-%M-%S"
   picture_size: "60x60"
 specifications:

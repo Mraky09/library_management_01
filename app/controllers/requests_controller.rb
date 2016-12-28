@@ -1,5 +1,13 @@
 class RequestsController < ApplicationController
   before_action :verify_login
+
+  def index
+    @requests = Request.user_request(current_user)
+      .includes(:book, :user)
+      .order(created_at: :DESC)
+      .paginate page: params[:page], per_page: Settings.user.item_per_page
+  end
+
   def new
     @request = Request.new book_id: params[:book_id]
   end
