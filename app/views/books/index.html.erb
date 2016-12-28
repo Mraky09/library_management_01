@@ -1,0 +1,19 @@
+<h2 id="sec0"><%= t "books" %></h2>
+<div class="row">
+  <%= form_tag books_path, method: :get do %>
+    <div class="col-md-6">
+      <%= text_field_tag :search, params[:search], placeholder: t("search"),
+        class: "form-control search-field" %>
+    </div>
+    <div class="col-md-6">
+      <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div class="row">
+  <%= render @books %>
+</div>
+
+<%= will_paginate %>
+

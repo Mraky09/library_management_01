@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
       t.references :book, index: true, foreign_key: true
       t.datetime :start_date
       t.datetime :end_date
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end
