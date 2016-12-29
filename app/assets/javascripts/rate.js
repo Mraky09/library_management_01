@@ -98,3 +98,16 @@ var slice = [].slice;
 $(document).ready(function() {
   $('#review_rate').hide();
 });
+$(function() {
+  return $(".starrr").starrr();
+});
+$(document).ready(function() {
+  $('#review_rate').hide();
+  $('#stars').on('starrr:change', function(e, value) {
+    $('#count').html(value);
+    $('#review_rate').val(value)
+  });
+  $('#stars-existing').on('starrr:change', function(e, value) {
+    $('#count-existing').html(value);
+  });
+});

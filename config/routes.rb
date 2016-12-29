@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :publishers
     resources :books
     resources :requests
+    resources :users
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
