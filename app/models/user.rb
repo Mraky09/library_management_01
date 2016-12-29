@@ -1,3 +1,4 @@
+require "csv"
 class User < ApplicationRecord
   has_many :likes
   has_many :requests
@@ -17,6 +18,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+
+  scope :search, -> (condition) {where("name LIKE :search OR email LIKE :search",
+    search: "%#{condition}%")}
 
   def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST
@@ -46,7 +50,19 @@ class User < ApplicationRecord
     self == current_user
   end
 
+  def self.to_xls
+    CSV.generate do |csv|
+      csv << [I18n.t("index"), I18n.t("user_name"), I18n.t("email"),
+        I18n.t("joined_date"), I18n.t("is_admin")]
+      all.each do |user|
+        csv << [user.id, user.name, user.email,
+          user.created_at.to_date, user.is_admin]
+      end
+    end
+  end
+
   private
+
   def downcase_email
     self.email = email.downcase
   end

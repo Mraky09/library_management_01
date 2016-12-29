@@ -68,6 +68,7 @@ en:
   authors_file_name: "authors_report_"
   author_name: "Author name"
   publishers_file_name: "publishers_report_"
+  users_file_name: "users_report_"
   search: "Search"
   delete_success: "Delete successfully!"
   delete_notice: "This category are using in another operation so you can't delete
@@ -103,6 +104,11 @@ en:
         add_book: "Add book"
       create:
         book_add_success: "Book added successfully!"
+    users:
+      edit:
+        update_user: "Update User Profile"
+      form:
+        update_user: "Update profile"
   shared:
     error_messages:
       contain: "The form contains"
@@ -130,3 +136,9 @@ en:
   reviews:
     form:
       leave_a_review: "Leave a review"
+  user_name: "User Name"
+  joined_date: "Joined Date"
+  action: "Action"
+  add_user: "Add User"
+  user_list: "List user"
+  is_admin: "Is admin?"
