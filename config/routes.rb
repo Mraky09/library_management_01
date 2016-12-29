@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :authors
     resources :publishers
     resources :books
+    resources :requests
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

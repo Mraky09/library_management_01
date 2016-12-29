@@ -7,6 +7,8 @@ class Request < ApplicationRecord
 
   enum status:  [:waiting, :accepted, :rejected]
 
+  scope :user_request, -> (current_user) {where(user: current_user)}
+
   private
 
   def check_book_available
