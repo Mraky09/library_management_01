@@ -34,7 +34,13 @@ class Book < ApplicationRecord
     self.borrowed?
   end
 
+  def avg_rating
+    avg = self.reviews.average(:rate)
+    avg.nil? ? avg = 0 : avg.truncate(2).to_s('F').to_f.round
+  end
+
   private
+
   def validate_number_specifications
     if self.specifications.size < Settings.specifications.minimum_item ||
       self.specifications.size > Settings.specifications.maximum_item
