@@ -19,6 +19,7 @@
       <p><%= @book.author.description %></p>
       <h4><%= t".about_publishser" %> : <%= @book.publisher.name %></h4>
       <p><%= @book.publisher.email %></p>
+      <%= render "likes", book: @book %>
     </div>
   </div>
 </div>

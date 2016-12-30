@@ -1,6 +1,9 @@
 <div class="col-md-4 book_cover">
-  <%= book.title %>
-  <%= link_to book_path(book), class: "thumbnail" do %>
+  <%= link_to book_path book, class: "thumbnail" do %>
     <img src="//placehold.it/300x300" class="img-responsive hover">
+  <% end %>
+  <p class="text-center"><%= book.title %></p>
+  <% if logged_in? %>
+    <%= render "likes", book: book %>
   <% end %>
 </div>

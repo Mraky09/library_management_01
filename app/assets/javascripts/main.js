@@ -46,4 +46,40 @@ $(document).on('turbolinks:load', function() {
     $('.no-rating').hide();
   }
   $('[data-toggle="tooltip"]').tooltip();
+
+  $('body').on('click', '.btn-like', function(e) {
+    e.preventDefault();
+    $btn = $(this);
+    $url = $(this).attr('href');
+    $book_id = $url.split('=')[1];
+    $del_url = 'likes/' + $book_id;
+    $.ajax({
+      dataType: 'html',
+      url: $url,
+      method: 'post',
+      success: function() {
+        $btn.removeClass('fa fa-thumbs-up btn-like').addClass('fa fa-thumbs-o-up btn-un-like');
+        $btn.attr('href', $del_url);
+      }
+    })
+    return false;
+  });
+
+  $('body').on('click', '.btn-un-like', function(e) {
+    e.preventDefault();
+    $btn = $(this);
+    $url = $(this).attr('href');
+    $book_id = $url.slice(-1);
+    $add_url = 'likes?id=' + $book_id;
+    $.ajax({
+      dataType: 'html',
+      url: $url,
+      method: 'delete',
+      success: function() {
+        $btn.removeClass('fa fa-thumbs-o-up btn-un-like').addClass('fa fa-thumbs-up btn-like');
+        $btn.attr('href', $add_url);
+      }
+    })
+    return false;
+  });
 });
