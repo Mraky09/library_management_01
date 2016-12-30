@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :books
+  resources :likes, only: [:create, :destroy]
   resources :requests
   resources :categories
   resources :reviews

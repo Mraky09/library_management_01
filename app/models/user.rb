@@ -1,6 +1,6 @@
 require "csv"
 class User < ApplicationRecord
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :requests
   has_many :reviews
   has_many :activities
@@ -59,6 +59,18 @@ class User < ApplicationRecord
           user.created_at.to_date, user.is_admin]
       end
     end
+  end
+
+  def like_book book
+    likes.create book_id: book.id
+  end
+
+  def unlike_book book
+    likes.find_by(book_id: book.id).destroy if liked? book
+  end
+
+  def liked? book
+    likes.find_by(book_id: book.id).present?
   end
 
   private

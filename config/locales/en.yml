@@ -63,6 +63,7 @@ en:
   index: "Index"
   excel: "Export excel file"
   total: "Total books"
+  books: "Books"
   categories_file_name: "categories_report_"
   book_file_name: "books_report_"
   authors_file_name: "authors_report_"
