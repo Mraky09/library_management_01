@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :reviews
   resources :comments
   resources :users
+  resources :relationships, only: [:create, :destroy]
+  resources :followers, only: [:index]
+  resources :following, only: [:index]
   root "static_pages#home"
   namespace :admin do
     resources :categories
