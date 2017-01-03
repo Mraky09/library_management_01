@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :requests
   resources :categories
   resources :reviews
+  resources :comments
   resources :users
   root "static_pages#home"
   namespace :admin do

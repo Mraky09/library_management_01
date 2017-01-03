@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :verify_login, only: [:create, :destroy, :update]
-  before_action :load_review, only: [:destroy, :update]
+  before_action :load_review, except: [:destroy, :update]
 
   def create
     @book = Book.find_by id: params[:book_id]
@@ -20,6 +20,10 @@ class ReviewsController < ApplicationController
       @review.destroy
       redirect_to :back
     end
+  end
+
+  def show
+    @comment = Comment.new
   end
 
   private

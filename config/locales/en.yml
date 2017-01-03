@@ -46,6 +46,9 @@ en:
   requests: "Requests"
   form_contains: "The form contains"
   error: "errors"
+  comments:
+    form:
+      comment: "Comment"
   book_are_borrowed: "Book are borrowed by "
   quantity: "Book quantity"
   sign_up: "Sign up"
