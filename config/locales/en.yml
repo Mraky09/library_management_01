@@ -76,6 +76,7 @@ en:
   publishers_file_name: "publishers_report_"
   users_file_name: "users_report_"
   search: "Search"
+  jumbo_description: "Welcome to Framgia Libary. Please sign up to use our services."
   delete_success: "Delete successfully!"
   delete_notice: "This category are using in another operation so you can't delete
     this"
