@@ -8,7 +8,7 @@
   <td><%= request.user.email %></td>
   <td><%= request.status %></td>
   <td>
-    <%= form_for [:admin, request], method: :put, remote: true do |f| %>
+    <%= form_for [:admin, request], method: :put do |f| %>
       <%= f.select :status, options_for_select([%w(Accept accepted), %w(Reject rejected)]) %>
       <%= f.submit t(".save_change"), class: "btn-success btn-xs" %>
     <% end %>

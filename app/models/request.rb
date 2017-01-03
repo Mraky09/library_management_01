@@ -14,11 +14,14 @@ class Request < ApplicationRecord
 
   def check_book_available
     temp_request = Request.where(book_id: 1, status: 1).order("created_at DESC").first
-    unless temp_request.present? && self.start_date > temp_request.end_date
-      errors.add :request, (I18n.t(".book_are_borrowed") + self.user.name + " " +
-        temp_request.start_date.to_date.to_s + " " + temp_request.end_date.to_date.to_s)
+    unless temp_request.nil?
+      unless self.start_date > temp_request.end_date
+        errors.add :request, (I18n.t(".book_are_borrowed") + self.user.name + " " +
+          temp_request.start_date.to_date.to_s + " " + temp_request.end_date.to_date.to_s)
+      end
     end
   end
+
 
   def end_date_is_after_start_date
     return if end_date.blank? || start_date.blank?
