@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :reviews
   resources :comments
+  resources :authors
+  resources :publishers
   resources :users
   resources :relationships, only: [:create, :destroy]
   resources :followers, only: [:index]
