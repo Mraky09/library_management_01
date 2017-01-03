@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
   belongs_to :review
   belongs_to :user
-  belongs_to :book
+  delegate :name, to: :user, prefix: true
 end
