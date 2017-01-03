@@ -31,12 +31,14 @@ en:
   home: "Home"
   add_publisher: "Add publisher"
   framgia: "Framgia Libary"
+  unfollow: "Unfollow this user"
   add_book: "Add book"
   app_name: "Framgia Libary"
   publisher_name: "Publisher name"
   address: "Address"
   email: "Email"
   phone_number: "Phone number"
+  follow: "Follow this user"
   books:
     show:
       about_publishser: "About publisher"
@@ -85,7 +87,7 @@ en:
   create_category: "Create category"
   time:
     formats:
-      request_date: "%Y-%m-%d %H-%M"
+      request_date: "%Y-%m-%d"
   requests:
     new:
       request: "Request"
@@ -113,6 +115,9 @@ en:
         update_user: "Update User Profile"
       form:
         update_user: "Update profile"
+    requests:
+      request:
+        save_change: "Save status"
   shared:
     error_messages:
       contain: "The form contains"
@@ -146,3 +151,7 @@ en:
   add_user: "Add User"
   user_list: "List user"
   is_admin: "Is admin?"
+  status: "Status"
+  user: "User"
+  end_date: "End date"
+  start_date: "Start date"
