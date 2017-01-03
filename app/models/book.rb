@@ -16,6 +16,10 @@ class Book < ApplicationRecord
   scope :search, -> (condition) {where("title LIKE :search", search: "%#{condition}%")}
   scope :in_category,->category_id{where "category_id = ?",
     category_id if category_id.present?}
+  scope :by_author,->author_id{where "author_id = ?",
+    author_id if author_id.present?}
+  scope :by_publisher,->publisher_id{where "publisher_id = ?",
+    publisher_id if publisher_id.present?}
 
   enum status: [:waiting, :borrowed]
 
