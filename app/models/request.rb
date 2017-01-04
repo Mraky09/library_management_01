@@ -13,7 +13,8 @@ class Request < ApplicationRecord
   private
 
   def check_book_available
-    temp_request = Request.where(book_id: 1, status: 1).order("created_at DESC").first
+    temp_request = Request.where(book_id: self.book_id, status: :accepted).
+      order("created_at DESC").first
     unless temp_request.nil?
       unless self.start_date > temp_request.end_date
         errors.add :request, (I18n.t(".book_are_borrowed") + self.user.name + " " +

@@ -6,8 +6,10 @@ class Admin::BooksController < ApplicationController
 
   def index
     @book_all = Book.in_category(params[:category_id]).search(params[:search])
-                  .includes(:category, :author, :publisher)
-                  .order created_at: :DESC
+      .by_publisher(params[:publisher_id])
+      .by_author(params[:author_id])
+      .includes(:category, :author, :publisher)
+      .order created_at: :DESC
     respond_to do |format|
       format.html {
         @books = @book_all
@@ -64,15 +66,15 @@ class Admin::BooksController < ApplicationController
   end
 
   def load_all_categories
-    @categories = Category.all
+    @categories = Category.select "id, name"
   end
 
   def load_all_authors
-    @authors = Author.all
+    @authors = Author.select "id, name"
   end
 
   def load_all_publishers
-    @publishers = Publisher.all
+    @publishers = Publisher.select "id, name"
   end
 
   def load_book
