@@ -2,10 +2,7 @@
 <h1><%= t "categories_list" %></h1>
 <%= form_tag admin_categories_path, method: :get do %>
   <%= text_field_tag :search, params[:search], placeholder: t("search"),
-    class: "form-control search-field" %>
-   <div class="input-group-btn search-btn">
-      <%= button_tag t("search"), type: :submit, class: "btn btn-primary" %>
-    </div>
+    class: "form-control search-field", autofocus: true %>
 <% end %>
     <%= button_to t("create_category"), new_admin_category_path, method: :get,
       class: "btn btn-success" %>

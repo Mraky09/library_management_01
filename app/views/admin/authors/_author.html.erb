@@ -2,7 +2,7 @@
   <td><%= index_for author_counter, @authors.current_page,
     Settings.item_per_page %></td>
   <td><%= image_tag author.image.url, size: Settings.format.picture_size if author.image? %></td>
-  <td><%= link_to author.name, edit_admin_author_path(author) %></td>
+  <td><%= author.name %></td>
   <td><%= author.description %></td>
   <td><%= author.books.length %></td>
   <td>

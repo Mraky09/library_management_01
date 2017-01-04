@@ -1,19 +1,15 @@
 class RelationshipsController < ApplicationController
-  before_action :verify_login, :load_user
+  before_action :verify_login
 
   def create
+    @user = User.find_by id: params[:followed_id]
     current_user.follow @user
     redirect_to @user
   end
 
   def destroy
+    @user = Relationship.find_by(id: params[:id]).followed
     current_user.unfollow @user
     redirect_to @user
-  end
-
-  private
-  def load_user
-    @user = User.find_by id: params[:id]
-    render_404 unless @user
   end
 end

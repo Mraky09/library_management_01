@@ -1,7 +1,7 @@
 <tr>
   <td><%= index_for publisher_counter , @publishers.current_page,
     Settings.item_per_page %></td>
-  <td><%= link_to publisher.name, admin_publisher_path(publisher) %></td>
+  <td><%= publisher.name %></td>
   <td><%= publisher.description %></td>
   <td><%= publisher.email %></td>
   <td>
